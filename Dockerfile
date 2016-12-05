@@ -1,9 +1,5 @@
 from ubuntu:16.04
 
-# Add default otisplus user    
-RUN useradd -u 1000 -m --shell /bin/bash otisplus && \
-    echo "otisplus:P@ssw0rd!@#$%^" | chpasswd
-
 
 RUN apt-get update && \
     apt-get install -y software-properties-common && \
