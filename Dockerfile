@@ -14,6 +14,12 @@ RUN apt-get update && \
     echo "===> Adding hosts for convenience..."  && \
     echo 'localhost' > /etc/ansible/hosts
 
+ENV ANSIBLE_GATHERING smart
+ENV ANSIBLE_HOST_KEY_CHECKING false
+ENV ANSIBLE_RETRY_FILES_ENABLED false
+ENV ANSIBLE_SSH_PIPELINING True
+ENV PATH /ansible/bin:$PATH
+ENV PYTHONPATH /ansible/lib
 
 # default command: display Ansible version
 CMD ["/bin/bash"]
